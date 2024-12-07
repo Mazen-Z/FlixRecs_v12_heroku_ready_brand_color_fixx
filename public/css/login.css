@@ -1,0 +1,134 @@
+/* Style for the login page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #222; /* Vibrant gradient */
+    color: #fff;
+}
+
+/* Login Container */
+.login-container {
+    background: linear-gradient(135deg, #3e3e3e, #333); /* Metallic gray background */
+    padding: 40px 30px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header Styling */
+.login-container h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ff0000df; /* Black title text */
+    letter-spacing: 1px;
+}
+
+/* Input Group Styling */
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    align-items: center;
+}
+
+/* Label Styling */
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    width: 100%;  /* Ensure labels are full width */
+    text-align: left; /* Align text to the left */
+}
+
+/* Input Fields Styling */
+.input-group input {
+    width: 100%;  /* Ensure input fields take full width of their container */
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    color: #333;
+    box-sizing: border-box; /* Prevent input from overflowing container */
+}
+
+/* Focused Input */
+.input-group input:focus {
+    outline: none;
+    border-color: #ff6f61;
+    box-shadow: 0 0 5px #ff6f61;
+}
+
+/* Submit Button Styling */
+.submit-btn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Button Hover Effect */
+.submit-btn:hover {
+    background-color: #ff0000d8;
+    transform: scale(1.05);
+}
+
+/* Active Button Effect */
+.submit-btn:active {
+    background-color: #e04141;
+}
+
+/* Footer Link */
+p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Add a subtle fade-in animation for the entire container */
+.login-container {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

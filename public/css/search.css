@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #222; /* Gradient from tomato red to peachy pink to light yellow */
+    margin: 0;
+    padding: 0;
+    background-size: cover; /* Ensures the gradient covers the entire screen */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    color: #333;
+    
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #FF0000;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(68, 65, 65, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.03); /* Slight hover effect for container */
+}
+
+h1 {
+    text-align: center;
+    color: #f7f7f7;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+#search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#movie-search {
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 450px;
+    font-size: 1.1rem;
+    border: 2px solid #6c757d; /* Metallic gray border */
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: #e2e6ea; /* Light metallic gray background */
+}
+
+#movie-search:focus {
+    border-color: #495057; /* Darker metallic gray on focus */
+    box-shadow: 0 0 8px rgba(73, 80, 87, 0.5); /* Slight metallic shadow */
+    background-color: #dae0e5; /* Slightly lighter metallic gray background on focus */
+}
+
+
+button {
+    padding: 12px 24px;
+    background-color: #007bfff1; /* Tomato color */
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #007bffb7; /* Darker orange */
+    transform: translateY(-2px); /* Slight hover lift effect */
+}
+
+#search-results {
+    margin-top: 20px;
+}
+
+.movie-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.movie-item:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.movie-item img {
+    width: 60px;
+    height: 90px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.movie-item .movie-info {
+    flex: 1;
+}
+
+.movie-item h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #333;
+}
+
+.movie-item p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.movie-item .movie-title {
+    font-weight: bold;
+    color: #ff6347; /* Tomato color */
+    transition: color 0.3s ease;
+}
+
+.movie-item:hover .movie-title {
+    color: #ff4500; /* Darker orange */
+}
+
+.movie-item .rating {
+    font-size: 1rem;
+    color: #f39c12;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.movie-item .rating .star-icon {
+    margin-right: 5px;
+    font-size: 1.2rem;
+}
+
+.movie-item .rating span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Error message styling */
+#error-message {
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
+}

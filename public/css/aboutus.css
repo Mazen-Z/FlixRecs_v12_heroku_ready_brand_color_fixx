@@ -1,0 +1,91 @@
+/* Body background with metallic gray effect */
+body {
+    background: linear-gradient(135deg, #8a8a8a, #b3b3b3, #808080); /* Subtle gradient for metallic feel */
+    background-size: 400% 400%;
+    animation: metallicBackground 10s ease infinite;
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Metallic background animation for a dynamic effect */
+@keyframes metallicBackground {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Styling for the about box */
+.about-box {
+    padding: 30px;
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency for contrast */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #222;
+}
+
+/* About text styling */
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 20px;
+    color: #444;
+}
+
+/* Highlighted text */
+.highlight {
+    font-weight: bold;
+    color: #5b5b5b;
+}
+
+/* Quote styling */
+.quote {
+    font-style: italic;
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+}
+
+/* Button styling */
+.contact-btn,
+.homepage-btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px 30px;
+    background-color: #28a745; /* Green background */
+    color: white;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover,
+.homepage-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Button alignment */
+.homepage-btn {
+    background-color: #007bff; /* Blue color for the homepage button */
+}
+
+.homepage-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

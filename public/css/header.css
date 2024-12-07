@@ -1,0 +1,59 @@
+
+/*contains all the classes/components for the header page */
+header {
+    display: flex;
+    align-items: cenlefter;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 35%;
+    height: 75px;
+    padding: 0 10px;
+    background-color: rgba(245, 242, 242, 0.904); /* Transparent background */
+    /*backdrop-filter: blur(1px); /* Optional: adds a blur effect */
+    z-index: 1000; /* Keeps the header on top of other content */
+}
+
+
+/* Logo styling */
+.logo {
+    height: 70px; /* Set height of the logo */
+    width: auto; /* Maintains aspect ratio */
+    cursor: pointer;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.05); /* Transparent background */
+}
+
+* Navigation links styling */
+.nav-links {
+    display: flex;
+    gap: 10px; /* Space between links */
+    background-color: rgba(245, 242, 242, 0.87);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 30px;
+    transition: color 0.3s;
+    cursor: pointer ;
+
+}
+
+.nav-links a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Ensure header content remains responsive */
+@media (max-width: 600px) {
+    .nav-links {
+        gap: 15px; /* Reduce gap on smaller screens */
+    }
+
+    .nav-links a {
+        font-size: 16px; /* Reduce font size */
+    }
+}
+

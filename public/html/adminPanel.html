@@ -1,0 +1,10 @@
+<!-- adminPanel.html -->
+<% posts.forEach(post => { %>
+    <div class="post">
+      <p><%= post.content %></p>
+      <form action="/delete-post/<%= post._id %>" method="POST">
+        <button type="submit" class="delete-button">Delete Post</button>
+      </form>
+    </div>
+  <% }); %>
+  

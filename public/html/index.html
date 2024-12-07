@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flix Recs - Movie Recommendations</title>
+  <link rel="stylesheet" href=" /css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+  
+
+
+
+
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <img src="/images/logo.png" alt="Flix Recs Logo" class="splash-logo">
+  </div>
+
+  <div id="main-content" style="display: none;">
+    
+    <header class="header-background">
+
+     
+     
+
+      <!-- Logo -->
+      <div class="logo-container">
+          <a href="/">
+              <img src=" /images/logo.png" alt="Flix Recs Logo" class="logo">
+          </a>
+      </div>
+      
+      <!-- Search Container -->
+      <div class="search-container">
+          <!-- Search Bar -->
+          <input type="text" placeholder="Search for movies/Enter keywords for A.I. Search (e.g. Show us something funny...)" class="search-bar" id="main-search-bar">
+          
+          <!-- Regular Search Button (Aligned to the right of the search bar) -->
+          <button class="search-button" type="button" onclick="hideFilterResults()">Search</button>
+          
+          <!-- AI Prediction Button (Appears below the search bar) -->
+          <button id="main-search-button" type="button" onclick="getPrediction()"> A.I. Powered Search?</button>
+      </div>
+
+  
+  
+      
+         
+
+     
+   
+
+     <!-- Header or Navbar -->
+ 
+        <div class="auth-links" id="auth-links">
+            <!-- This section will be populated by JavaScript -->
+        </div>
+
+
+    </header>
+
+
+     <!-- loading bar -->
+    <div id="loading-spinner" style="display: none;">
+      <span>Loading...</span>
+    </div>
+    
+
+    <!-- Menu Bar -->
+    <nav class="menu-bar">
+      <div id="movies-button" class="menu-item">New Feature (Coming Soon!) </div>
+      <a href=" html/search.html" class="menu-item"> Movie Reviews</a>
+      <a href=" html/dashboard.html" class="menu-item">Wishlist</a>
+      <a href=" html/aboutus.html" class="menu-item">About Us</a>
+      <a href="mailto:customersupport@flixrecs.com" class="menu-item">Contact Us</a>
+    </nav>
+
+    <!-- Filter Bar -->
+    <div class="filter-section">
+      <label for="genre-select">Genre:</label>
+      <select id="genre-select">
+        <option value="">All</option>
+        <option value="28">Action</option>
+        <option value="35">Comedy</option>
+        <option value="18">Drama</option>
+        <option value="27">Horror</option>
+        <option value="878">Sci-Fi</option>
+      </select>
+
+      <label for="year-input">Year:</label>
+      <input type="text" id="year-input" placeholder="e.g., 2020">
+
+      <label for="rating-input">Rating:</label>
+      <input type="number" id="rating-input" placeholder="7.0" step="0.1" min="0" max="10">
+
+      <button class="apply-filters-button">Search Based On Filters</button>
+    </div>
+     <!--visit counter-->
+    <div id="visit-counter-popup">
+    <span id="visit-count">Number of visits: 0</span>
+      <!-- User logged in or not -->
+      <section id="welcome-section">
+        <!-- This section will be populated by JavaScript -->
+    </section>
+
+
+    </div>
+
+    <div class="Prediction-Content" id="Prediction-Content-id" style="visibility: hidden;">
+      <output id="Main-Output" style=" visibility: hidden; margin:0 auto; text-align:center; font-size:25px; color:rgb(199, 33, 33);"></output></div>
+ 
+
+  <!-- Traditonal Seach Field Titles/Outputs -->    
+
+  <div id="search-results-title" style="display: none;">
+    <h2 class="sections-title">Non A.I. Driven Search Results</h2>
+  </div>
+  
+  <div id="search-results" style="display: none;"></div>
+  
+  <div id="filtered-results-title" style="display: none;">
+    <h2 class="filter-title">Non A.I. Driven Filter Search Results</h2>
+  </div>
+  
+  <div id="filtered-results" style="display: none;"></div>
+  
+
+  <section class="main-content">
+   
+
+      
+
+    <section class="movie-categories">
+
+      <h2>New in Theaters</h2>
+      <div class="movie-carousel" id="new-in-theaters"></div>
+      
+      <h2>New Streaming Movies</h2>
+      <div class="movie-carousel" id="new-streaming-movies"></div>
+
+     
+
+      <h2>Family Laughs</h2>
+      <div class="movie-carousel" id="family-laughs"></div>
+
+      <h2>Top Picks</h2>
+      <div class="movie-carousel" id="top-picks"></div>
+
+      <h2 id="filtered-results-title" style="display: none;">Filtered Results</h2>
+      <div class="movie-carousel" id="filtered-results"></div>
+    </section>
+  </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+          <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank" class="footer-link">
+            <img src=" /images/Instagram_logo.png" alt="Instagram" class="social-icon">
+          </a>
+          <a href="https://x.com/i/flow/login" target="_blank" class="footer-link">
+            <img src=" /images/x logo.png" alt="X" class="social-icon">
+          </a>
+        </div>
+        <p class="footer-description">
+            Flix Recs is your go-to destination for unbiased movie critiques and recommendations. Explore a vast collection of the latest films, timeless classics, and hidden gems. Enjoy seamless browsing, curated reviews, and personalized watchlists to help you discover your next favorite movie.
+        </p>
+        <p class="footer-copyright">© Flix Recs</p>
+      </footer>
+    </div>
+    
+   
+    <script src="/js/API_classic.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+  
+    <script>hidePredictionContent()</script>
+    
+  
+   
+
+
+
+  </body>
+</html>

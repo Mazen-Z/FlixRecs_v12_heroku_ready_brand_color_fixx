@@ -1,0 +1,777 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #141414;
+  color: white;
+}
+
+#splash-screen {
+  background-image: url('../images/header_background.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  animation: fadeOut 2s ease 3s forwards;
+}
+
+.splash-logo {
+  width: 400px;
+  animation: logoZoom 2s ease;
+}
+
+@keyframes logoZoom {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
+
+/* Main Content Area */
+#main-content {
+  width: 100%;
+  overflow-x: auto; /* Allows horizontal scroll for the carousel */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+
+.header-background {
+  background-image: url('../images/header_background.png');
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo-container .logo {
+  max-width: 200px;
+}
+
+.auth-links {
+  margin-right: 30px;
+  font-size: 1.2em;
+}
+
+.auth-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+
+
+/*Search View*/
+.search-container {
+  width: 50%;
+  max-width: 600px; /* Expand to a good chunk of header space */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+/* Search Button */
+.search-bar {
+  width: 100%; /* Fully utilize the container's width */
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px; /* Space between search bar and button */
+}
+
+/* Search Button */
+.search-bar {
+  width: 100%; /* Fully utilize the container's width */
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px; /* Space between search bar and button */
+}
+
+.search-button {
+  background-color: #007BFF; /* Blue color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 45px;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: flex-end; /* Align this button to the right */
+  margin-top: -55px; /* Adjust to overlay properly */
+  margin-right: -100px;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.search-button:hover {
+  background-color: #0056b3; /* Darker blue */
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.6); /* Blue glow */
+  transform: scale(1.05); /* Slight enlarge effect */
+}
+
+/* Prediction Button */
+#main-search-button {
+  background-color: #dc3545 !important; /* Dark red */
+  color: white !important;
+  border: none !important;
+  border-radius: 5px !important; /* Rectangle shape */
+  padding: 12px 24px !important; /* Inner padding */
+  font-size: 18px !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  margin-top: 10px !important;
+  transition: background-color 0.5s ease !important, box-shadow 0.5s ease !important, transform 0.3s ease !important;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3) !important; /* Subtle glow in resting state */
+  
+  /* Apply animation */
+  animation: colorChange 2s infinite !important; /* Color change every 2 seconds */
+}
+
+/* Animation for color change */
+@keyframes colorChange {
+  0% {
+    background-color: #dc3545 !important; /* Dark red */
+  }
+  50% {
+    background-color: #ff5733 !important; /* Lighter red */
+  }
+  100% {
+    background-color: #dc3545 !important; /* Dark red again */
+  }
+}
+
+#main-search-button:hover {
+  background-color: #a71d2a; /* Darker red on hover */
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6); /* Red glow effect */
+  transform: scale(1.1); /* Slight enlarge effect */
+  color: #fff; /* Maintain white text */
+}
+
+#main-search-button:focus {
+  outline: none; /* Remove focus outline */
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.8); /* Intense glow on focus */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Edit the main movie preview div which appears that bottom of the homepage, displaying 16 movies.   */
+.Prediction-Content{
+margin: auto;
+display: block;
+position: center;
+width: 100%;
+height:0px;
+text-align: center;
+align-content: flex-end;
+padding-bottom: 100px;
+border: 4px solid rgb(255, 3, 3);
+visibility: hidden;
+
+
+background-color: rgba(0, 0, 0, 0.904); /* Transparent background */
+}
+
+
+
+#main-search-button{
+  position: absolute; /* Position the button within the .search-container div */
+  bottom: 10px; /* Positioned 10px from the bottom of the search-container */
+  left: 50%; /* Centered horizontally within the parent */
+  transform: translateX(-50%); /* Ensures exact horizontal centering */
+  z-index: 1000; /* Ensures the button stays on top */
+  padding: 15px 30px; /* Comfortable padding */
+  font-size: 18px; /* Larger, readable font size */
+  font-weight: bold; /* Makes text stand out */
+  color: #ffffff; /* White text for contrast */
+  background: linear-gradient(90deg, #a30000, #b30000, #cc0000); /* Dark red gradient */
+  border: none; /* No border for a modern look */
+  border-radius: 25px; /* Smooth, pill-shaped button */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Makes text pop */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Glowing Hover effect */
+#main-search-button:hover {
+  background: linear-gradient(90deg, #cc0000, #b30000, #a30000); /* Reverse gradient on hover */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4), 0 0 45px rgba(255, 0, 0, 0.6); /* Glowing effect */
+  transform: translateX(-50%) scale(1.05); /* Slightly enlarges on hover */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.6); /* Glowing text effect */
+}
+
+
+
+
+
+
+
+
+
+
+
+.menu-bar {
+background-color: #FF0000;
+display: flex;
+justify-content: space-around;
+padding: 12px 0;
+position: relative;
+}
+
+.menu-item {
+color: white;
+font-weight: bold;
+cursor: pointer;
+font-size: 1.2em;
+position: relative;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #333;
+padding: 20px;
+top: 100%;
+left: 0;
+width: 400px;
+box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+border-radius: 5px;
+z-index: 100;
+display: flex;
+gap: 10px;
+}
+
+.genre-column {
+display: flex;
+flex-direction: column;
+width: 25%;
+}
+
+.genre-column a {
+color: #ccc;
+text-decoration: none;
+padding: 5px 0;
+font-size: 1em;
+}
+
+.genre-column a:hover {
+color: #fff;
+}
+
+
+
+/*Screen Flexibility*/
+@media (max-width: 768px) {
+  .search-bar {
+    width: 80%; /* Adjust search bar width on small screens */
+  }
+  .movie-item {
+    width: 45%; /* Allow movie cards to scale down on smaller screens */
+  }
+  .header-background {
+    height: auto; /* Allow header to adapt to screen size */
+  }
+}
+
+
+
+
+
+/* Carousel Container */
+.movie-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0;
+  flex-wrap: nowrap; /* Ensures movies stay in one row */
+}
+
+/* Movie Cards  for search/filter)*/
+.movie-item {
+  width: 240px;
+  text-align: center;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 10px;
+  transition: transform 0.2s;
+  flex-shrink: 0; /* Prevents shrinking of movie cards */
+}
+
+
+/* Screen display for movie cards, in respect to search/filter)*/
+.movie-item {
+  flex: 1 1 calc(33% - 20px); /* 3 cards per row */
+  max-width: 300px;
+  min-width: 250px;
+}
+
+@media (max-width: 1024px) {
+  .movie-item {
+      flex: 1 1 calc(50% - 20px); /* 2 cards per row on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-card {
+      flex: 1 1 100%; /* 1 card per row on mobile */
+  }
+}
+
+
+
+
+.movie-item:hover {
+  transform: scale(1.05);
+}
+
+/* Movie Poster */
+.movie-item img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Movie Info (Rating & Bookmark) */
+.movie-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.rating-star {
+  color: yellow;
+  font-size: 1.2em;
+  margin-left: 5px;
+}
+
+.bookmark-icon {
+  color: gray;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* Plot Container */
+.plot-container {
+  margin: 10px 0;
+  text-align: left;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+
+
+
+.plot {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #ddd;
+}
+
+
+.read-plot-btn {
+  margin-top: 10px;  /* Adds space between plot and button */
+  padding: 10px;
+  background-color: #FF0000;  /* Tomato color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.read-plot-btn:hover {
+  background-color: #FF0000;  /* Darker tomato color on hover */
+}
+/* Button to Show More of the Plot */
+.button-container {
+  margin-top: 5px;
+}
+
+.show-more {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Trailer Button */
+.trailer-container {
+  margin-top: 10px;
+}
+
+.trailer-button {
+  padding: 10px 16px;
+  font-size: 14px;
+  background-color: #FF0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Movie Platforms Container */
+.platforms-container {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* Scrollbar Styles - Horizontal Scroll */
+.movie-carousel::-webkit-scrollbar {
+  height: 16px;  /* Makes the horizontal scrollbar larger */
+}
+
+.movie-carousel::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.movie-carousel::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
+
+/* Title for Search Results */
+.search-title{
+  font-size: 24px;
+  font-weight: bold;
+  color: #007BFF; /* Blue color for the title */
+  text-transform: uppercase;
+  margin-bottom: 20px; /* Space between title and movie cards */
+  text-align: center; /* Center-align the title */
+  border-bottom: 2px solid #007BFF; /* Blue underline */
+  padding-bottom: 10px;
+}
+
+/* Title for Filtered Search Results */
+.filter-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FF5733; /* Orange color for the title */
+  text-transform: uppercase;
+  margin-bottom: 20px; /* Space between title and movie cards */
+  text-align: center; /* Center-align the title */
+  border-bottom: 2px solid #FF5733; /* Orange underline */
+  padding-bottom: 10px;
+}
+
+/* Container for filtered results */
+#filtered-results {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of cards into multiple rows */
+  gap: 20px; /* Adds space between the movie cards */
+  justify-content: flex-start; /* Aligns cards to the left */
+  padding: 20px 0;
+}
+
+
+
+/* Container for search results */
+#search-results {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of cards into multiple rows */
+  gap: 20px; /* Adds space between the movie cards */
+  justify-content: flex-start; /* Aligns cards to the left */
+  padding: 20px 0;
+  width: 100%; /* Ensures the container spans the full width */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  max-width: 100%; /* Optional, ensures no overflow beyond the parent container */
+  box-sizing: border-box; /* Ensures padding is included in width calculations */
+}
+
+/* Custom scrollbar design for search results */
+#search-results::-webkit-scrollbar {
+  height: 16px; /* Set to match the scrollbar height of #main-content */
+}
+
+
+#search-results::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color for the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+
+}
+
+#search-results::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker color when hovering */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+background-color: #1C1C1C;
+padding: 20px;
+text-align: center;
+color: #B3B3B3;
+font-family: Arial, sans-serif;
+margin-top: 40px;
+}
+
+.footer-links {
+margin-bottom: 10px;
+}
+
+.footer-link {
+margin: 0 10px;
+}
+
+.social-icon {
+width: 40px; 
+height: 40px; 
+vertical-align: middle;
+}
+
+.footer-description {
+font-size: 0.9em;
+margin: 10px 0;
+color: #888888;
+}
+
+.footer-description a {
+color: #B3B3B3;
+text-decoration: none;
+}
+
+.footer-description a:hover {
+color: white;
+}
+
+.footer-copyright {
+font-size: 0.8em;
+color: #666666;
+}
+
+/* Filter Section */
+.filter-section {
+background-color: #222; /* Dark gray to contrast with the navbar */
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+padding: 15px;
+color: white;
+border-bottom: 2px solid #333; /* Optional border for separation */
+}
+
+.filter-section label {
+font-weight: bold;
+color: white;
+}
+
+.filter-section select,
+.filter-section input {
+padding: 8px;
+border-radius: 5px;
+border: none;
+outline: none;
+background-color: #444; /* Slightly lighter gray */
+color: white;
+font-size: 1rem;
+}
+
+.filter-section select:focus,
+.filter-section input:focus {
+outline: 2px solid red;
+}
+
+.apply-filters-button {
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+background-color: red;
+color: white;
+cursor: pointer;
+font-size: 1rem;
+}
+
+
+.apply-filters-button:hover {
+background-color: darkred;
+}
+
+
+
+/* A.I. Reccomendation trailling*/
+
+#floating-button-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: none; /* Hidden initially */
+}
+
+
+/*SIGNUP PAGE HOME - BUTTON */
+
+.home-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #FF0000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 500;
+}
+.home-btn:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+/*HOMEPAGE LOGIN/LOGOUT - BUTTONS*/
+
+.flashy-btn {
+  background-color: #FF0000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.flashy-btn:hover {
+  background-color: #c90202;
+  transform: scale(1.1);
+}
+
+.flashy-btn:focus {
+  outline: none;
+}
+
+.flashy-btn:active {
+  background-color: #e04e00;
+}
+
+
+
+/* Style for the welcome message */
+#auth-links p {
+  font-size: 24px;  /* Larger font size */
+  font-weight: bold;  /* Make the text bold */
+  color: #f3f7f3;  /* Use a pleasant green color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);  /* Add a subtle shadow for emphasis */
+  margin-bottom: 20px;  /* Add spacing below the text */
+  font-family: 'Arial', sans-serif;  /* Use a clean, modern font */
+}
+
+/* Optionally, you can add a background color and padding */
+#auth-links p {
+  background-color: #FF0000; /* Light blue background */
+  padding: 15px;  /* Add padding for spacing */
+  border-radius: 10px;  /* Rounded corners */
+  width: fit-content;  /* Shrink-wrap width */
+  margin-top: 20px;  /* Space from the top */
+}
+
+.watched-button {
+  font-size: 0.8em;
+  background-color: red; /* Red background */
+  color: white; /* White text */
+  padding: 5px 10px; /* Smaller padding */
+  margin-left: 10px; /* Space between Wishlist and Watched buttons */
+
+  cursor: pointer;
+}

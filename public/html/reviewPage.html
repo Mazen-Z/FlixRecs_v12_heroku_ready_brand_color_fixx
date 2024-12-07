@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Review</title>
+    <link rel="stylesheet" href=" /css/reviewPage.css">
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src=" /js/reviewPage.js"></script>
+</head>
+<body>
+   
+      <!-- Movie Card Layout -->
+    <div class="fancy-movie-card">
+        <img id="movie-poster" alt="Movie Poster">
+        <div class="movie-info">
+            <h1> Reviews for <span id="movie-title"></span></h1>
+            <a id="go-back-link" href=" /" style="width: 50px;">Home?</a>
+            <b  style="color:white;text-shadow:black;">Plot:</b><p id="movie-plot" style="color:white;"></p>
+            <b style="color:white;text-shadow:black;">Cast:</b><p id="movie-cast"  style="color:white;"></p>
+            <b style="color:white;text-shadow:black;">Available on:</b><p id="streaming-platforms"  style="color:white;"></p>
+            <div id="movie-trailer">
+                <!-- Trailer button will be added here if available -->
+            </div>
+            <div class="average-rating">
+                <span id="movie-aggregate-rating">0</span>
+                <i class="star-icon">★</i>
+                
+             
+            </div>
+            <div id="total-reviews" style="color:white;"></div>
+
+        </div>
+    </div>
+    
+    <!-- Review Form -->
+    <form id="review-form">
+        <label for="reviewContent">Your Review:</label><br>
+        <textarea name="reviewContent" style="width: 600px; height: 200px;" id="reviewContent" placeholder="Write your review..." required></textarea><br><br>
+
+        <label for="rating">Rating (1-10):</label>
+        <input type="number" id="rating" name="rating" min="1" max="10" required><br><br>
+
+        <button type="submit">Submit Review</button>
+        
+
+    </form>
+
+    <h3>User Reviews:</h3>
+    <div id="user-reviews"></div>
+    <p id="no-reviews-message" style="display: none;">No reviews available.</p>
+    
+    
+
+
+    <br>
+  
+    
+
+</body>
+</html>

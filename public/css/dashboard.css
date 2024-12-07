@@ -1,0 +1,587 @@
+/* Overall page background */
+body {
+  font-family: 'Arial', sans-serif;
+  background: #222; /* Subtle gradient dark background */
+  color: #eaeaea; /* Light text for contrast */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Positioning the Reset Password Button within the user info container */
+#user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  color: #eaeaea;
+}
+
+
+
+#user-info:hover {
+  transform: scale(1.02); /* Subtle zoom effect on hover */
+}
+
+/* Heading styles */
+h1, h2 {
+  color: #e2e0e0; /* Vibrant red for headings */
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+h2 {
+  margin-top: 40px;
+  font-size: 1.5em;
+}
+
+/* Subtitle */
+#username {
+  font-weight: bold;
+  color: #e1e2e1; /* Vibrant green for emphasis */
+}
+
+/* User Info Section */
+#user-info p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+#user-info strong {
+  color: #fbfbfa; /* Vibrant yellow for strong text */
+}
+
+/* Button Styling */
+button {
+  padding: 12px 18px;
+  margin: 8px;
+  background-color: #FF0000; /* Vibrant green */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #FF0000;
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+}
+
+/* Add Movie Input Styling */
+#movie-title-input {
+  padding: 12px;
+  width: 80%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1.1em;
+  margin-right: 12px;
+}
+
+#movie-title-input:focus {
+  outline: none;
+  border-color: #FF0000;
+}
+
+/* Container for side-by-side layout */
+#movie-sections {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 50px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Wishlist and Movies Watched Box */
+.movie-box {
+  background-color: #222; /* Matches dashboard container */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  width: 100%; /* Ensure box takes up the available width */
+  max-height: 600px; /* Taller rectangles */
+  overflow-y: auto; /* In case the list grows too long */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box; /* Ensure padding is accounted for */
+}
+
+/* Movie List Styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%; /* Ensure ul takes up available space */
+}
+
+li {
+  padding: 15px;
+  background-color: #222; /* Dark background for items */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Ensure button stays at the bottom */
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 23%; /* Slightly larger width for a more spacious layout */
+  max-width: 190px; /* Increase max width to allow for more space */
+  min-width: 150px; /* Set a minimum width to prevent shrinkage */
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 12px;
+  height: auto; /* Allow the item to grow depending on the title length */
+  overflow: hidden; /* Prevent items from sticking out */
+  word-wrap: break-word; /* Ensure long movie titles wrap to the next line */
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 45px; /* Ensure space for button */
+}
+
+/* Movie Title Styling */
+li span {
+  font-size: 1.2em; /* Larger font size */
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+  white-space: normal; /* Allow wrapping for long titles */
+  width: 100%; /* Ensure the title takes up full width */
+  display: block;
+  max-width: 100%; /* Prevent overflow */
+  word-wrap: break-word; /* Allow titles to break onto the next line if necessary */
+  text-align: center;
+  line-height: 1.3; /* Space between lines in long titles */
+}
+
+/* Button Styling */
+li button {
+  padding: 8px 14px;
+  background-color: #ff4c4c; /* Red for delete button */
+  border-radius: 8px;
+  font-size: 0.95em; /* Slightly larger button text */
+  color: white;
+  border: none;
+  cursor: pointer;
+  align-self: stretch; /* Stretch button to full width of the box */
+  margin-top: auto; /* Ensure button is at the bottom of the box */
+}
+
+li button:hover {
+  background-color: #e60000;
+}
+
+/* Fancy Gray Metallic Output Box */
+#output-box {
+  background: linear-gradient(45deg, #a1a1a1, #6e6e6e); /* Subtle metallic gradient */
+  color: #fff; /* Light text on dark background */
+  border-radius: 15px;
+  padding: 35px; /* Increased padding for larger space inside */
+  margin-top: 50px; /* Increased space between #user-info and #output-box */
+  margin-bottom: 50px; /* More space below */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  border: 1px solid #555; /* Slight border to enhance metallic look */
+  font-size: 1.4em;
+  text-align: center; /* Center text inside */
+  width: 100%;
+  max-width: 1600px; /* Wider box */
+  overflow: hidden; /* Ensure no overflow */
+  margin: 0 auto; /* Centering the box horizontally */
+  height: 700px;
+  transition: all 0.3s ease;
+}
+
+#output-box:hover {
+  transform: scale(1.02); /* Subtle zoom effect on hover */
+}
+
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #222; /* Dark vibrant background */
+  color: #eaeaea; /* Light text for contrast */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Dashboard container */
+#user-info {
+  background-color: #333; /* Slightly lighter dark for the boxes */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Deeper shadow for more depth */
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  color: #eaeaea; /* Ensure text is readable on dark background */
+  transition: box-shadow 0.3s ease;
+}
+
+/* Heading styles */
+h1, h2 {
+  color: #f9f7f7; /* Vibrant red for headings */
+  text-align: center;
+}
+
+h1 {
+  margin-top: 30px;
+}
+
+h2 {
+  margin-top: 50px;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+/* Subtitle */
+#username {
+  font-weight: bold;
+  color: #dfe1df; /* Vibrant green for emphasis */
+}
+
+/* Button Styling */
+button {
+  padding: 12px 18px;
+  margin: 6px;
+  background-color: #FF0000; /* Vibrant green */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #FF0000;
+  transform: scale(1.08); /* Slight zoom on hover */
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Container for side-by-side layout */
+#movie-sections {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  gap: 25px;
+}
+
+/* Movie Box */
+.movie-box {
+  background-color: #2b2b48; /* Matches dashboard container */
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  width: 100%;
+  max-height: 650px; /* Taller rectangles */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+.movie-box  {
+  width: 300px;
+  height: 450px; /* Adjust according to your design */
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-box , .movie-box  p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.movie-box  p {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limits to 4 lines */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+/* Movie List Styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+}
+
+li {
+  padding: 15px;
+  background-color: #333;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  width: 24%;
+  max-width: 200px;
+  min-width: 140px;
+  text-align: center;
+  margin-bottom: 15px;
+  height: auto;
+  overflow: hidden;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-5px); /* Hover effect to lift the item */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+}
+
+li span {
+  font-size: 1.1em;
+  color: #ffffff;
+  margin-bottom: 12px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+/* Button Styling */
+li button {
+  padding: 10px 14px;
+  background-color: #FF0000;
+  border-radius: 6px;
+  font-size: 1em;
+  color: white;
+  border: none;
+  cursor: pointer;
+  align-self: stretch;
+  margin-top: auto;
+}
+
+li button:hover {
+  background-color: #e60000;
+}
+
+
+/* Output Box  for custom reccomendations*/
+#output-box {
+  background: linear-gradient(45deg, #a1a1a1, #6e6e6e);
+  color: #fff;
+  border-radius: 15px;
+  padding: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid #555;
+  font-size: 1.4em;
+  text-align: center;
+  width: 100%;
+  max-width: 1600px;
+  height: auto; /* Adjust height based on content */
+  margin: 0 auto;
+  overflow-x: auto; /* Ensure horizontal scrolling is enabled */
+}
+
+/* Increase horizontal scrollbar size */
+#output-box::-webkit-scrollbar {
+  height: 16px; /* Increase the height of the horizontal scrollbar */
+}
+
+#output-box::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the thumb */
+  border-radius: 8px;
+}
+
+#output-box::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Hover color for the thumb */
+}
+
+#output-box::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+}
+/* Carousel Container */
+#carousel-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto; /* Horizontal scroll */
+  gap: 20px; /* Space between cards */
+  padding-bottom: 20px; /* Extra spacing below */
+  padding-left: 10px; /* Padding to avoid starting flush against the edge */
+  padding-right: 10px;
+  scroll-behavior: smooth; /* Smooth scrolling for better user experience */
+  margin: 0 auto;
+  justify-content: flex-start;
+}
+
+/* Movie Card */
+.movie-card {
+  background-color: #2d2d2d; /* Card background color */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  width: 280px; /* Wider cards */
+  height: auto; /* Dynamically adjust height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  color: white;
+  padding: 10px; /* Inner padding for content */
+  flex-shrink: 0; /* Prevent shrinking */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ensure horizontal spacing between items */
+#carousel-container .movie-card:not(:last-child) {
+  margin-right: 20px; /* Space between cards */
+}
+
+/* Hover Effect */
+.movie-card:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Movie Poster */
+.movie-card img {
+  width: 100%;
+  height: 360px; /* Maintain a fixed height */
+  object-fit: cover;
+  border-radius: 8px 8px 0 0; /* Rounded top corners */
+  margin-bottom: 10px;
+}
+
+/* Title Styling */
+.movie-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Rating and Cast */
+.movie-card p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #b5b5b5;
+}
+
+/* Buttons (Trailer, Wishlist) */
+.movie-card button {
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px 0;
+  border: none;
+}
+
+
+/* Buttons */
+.movie-card button {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.movie-card button:hover {
+  transform: scale(1.05); /* Slight zoom */
+}
+
+.movie-card .wishlist-button {
+  background-color: #FF6347;
+  color: white;
+}
+
+.movie-card button:hover {
+  transform: scale(1.1);
+}
+
+/* Trailer Button */
+.movie-card .trailer-button {
+  padding: 8px 12px; /* Same padding as other buttons */
+  font-size: 14px; /* Match font size */
+  background-color: #007BFF; /* YouTube button background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: flex; /* Align icon and text horizontally */
+  align-items: center; /* Center icon and text vertically */
+  justify-content: center;
+  gap: 8px; /* Space between icon and text */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.movie-card .trailer-button img {
+  width: 16px; /* Smaller icon size */
+  height: auto; /* Maintain aspect ratio */
+  vertical-align: middle;
+}
+
+.movie-card .trailer-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight scaling effect */
+}
+
+/* Platforms Section */
+.movie-card .platforms span {
+  display: inline-block;
+  font-size: 12px;
+  background-color: #444;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin: 3px;
+}
+
+
+#reset-password-btn:hover {
+  background-color: #d32f2f;
+  transform: scale(1.08); /* Slight zoom on hover */
+}
+
+#reset-password-btn:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}

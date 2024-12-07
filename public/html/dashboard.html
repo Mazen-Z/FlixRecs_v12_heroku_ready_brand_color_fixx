@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Movie Recommendations</title>
+    <link rel="stylesheet" href=" /css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+</head>
+<body>
+    <h1>Welcome to Your Dashboard, <span id="user-first-name"></span>!</h1><!-- User first name will be displayed here -->
+    <div id="navbar">
+        <!-- Home button/link -->
+        <div id="home-btn-container">
+            <button id="home-btn" style="width: 105px;" onclick="window.location.href='/'">Home</button>
+            
+        </div>
+        
+        <!-- Sign Out Button (top-right corner) -->
+        <button id="signout-btn" class="signout-btn">Sign Out</button>
+    </div>
+ 
+    <div id="user-info">
+        <p><strong>Username:</strong> <span id="username"></span></p> <!-- Added username field -->
+        <p><strong>First Name:</strong> <span id="first-name"></span></p>
+        <p><strong>Last Name:</strong> <span id="last-name"></span></p>
+        <p><strong>Email:</strong> <span id="email"></span></p>
+        <div id="movies-watched-info">
+            <p><strong> Total Movies Watched (Feature Will Be Coming Soon!):</strong> <span id="movies-watched-count"></span></p>
+            
+            <output id="output-watched-number"></output>
+        </div>
+        <p><strong>Date Joined:</strong> <span id="join-date"></span></p>
+        <button id="dashboard-movie-cards"   onclick="getMovieRecommendation()">Get Personalized A.I. Movies Recommendations, Just For You?</button>
+    </div>
+    <!-- Reset Password Button -->
+    <button id="reset-password-btn" onclick="window.location.href=' /html/forgot-password.html'">Reset Password</button>
+
+    <div id="output-box" style="display: none;" >
+        <div id="carousel-container" >
+            <!-- Insert carousel content here -->
+  
+            <!-- More items can be added dynamically -->
+        </div>
+    </div>
+
+
+    <script src=" /js/API_classic.js"></script>
+
+    <script src=" /js/dashboard.js"></script>
+</body>
+</html>
+
+    <h2>Your Wishlist</h2>
+    <ul id="wishlist">
+        <!-- Wishlist titles will be dynamically inserted here -->
+    </ul>
+
+    <h2>Movies Watched</h2>
+    <ul id="movies-watched">
+        <!-- Movies watched titles will be dynamically inserted here -->
+    </ul>
+
+    <h3>Add To Movies Watched</h3>
+    <input type="text" id="movie-title-input" placeholder="Enter movie title" />
+    <button id="add-movie-btn">Add Movie</button>
+
+  
+

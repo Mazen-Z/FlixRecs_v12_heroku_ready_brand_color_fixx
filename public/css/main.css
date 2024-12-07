@@ -1,0 +1,175 @@
+.Main-Search-Menu {
+  margin: auto;
+  display: block;
+  position: center;
+  width: 960px;
+  height: 100px;
+  text-align: center;
+  background-color: rgba(179, 169, 169, 0.904); /* Transparent background */
+
+}
+
+
+/*Use this following css when managing the output field of our engine  */
+.Main-Output-Menu {
+background-color:rgb(0, 0, 0);
+color: rgb(255, 243, 243);
+height: 450px;
+width: 952px;
+display: block;
+text-align: center;
+align-content: center;
+border-style: solid;
+border-color: black;
+border-width: 7px;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px;
+margin-top: 15px;
+margin-left: 15px;
+margin-right: 15px;
+box-shadow: inset 0 0 5px 5px rgba(128, 128, 128, 0.5), inset 0 0 5px 5px rgba(192, 192, 192, 0.5); /* Light gray gradient shadow effect */
+}
+
+/* Movie Card container */
+.movie-card {
+display: flex;
+flex-direction: column;
+width: 180px;  /* Reduced width to fit smaller images */
+height: auto;
+background-color: #f4f4f9;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+margin: 10px;  /* Margin for spacing between cards */
+overflow: hidden;
+transition: transform 0.3s ease;
+position: relative;
+text-align: center; /* Center-aligning text */
+}
+
+/* Hover effect for movie card */
+.movie-card:hover {
+transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+/* Movie poster image */
+.movie-poster {
+width: 100%;
+height: 120px;  /* Adjusted height of the poster */
+object-fit: cover;  /* Maintain aspect ratio */
+}
+
+/* Movie information section */
+.movie-info {
+padding: 10px;
+font-family: Arial, sans-serif;
+font-size: 13px;  /* Adjusted font size for better readability */
+color: #333;
+height: 130px;  /* Fixed height for text area */
+overflow: hidden;
+}
+
+/* Title styling */
+.movie-info h2 {
+font-size: 16px;  /* Reduced font size */
+font-weight: bold;
+color: #2c3e50;
+margin-bottom: 5px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;  /* Prevent title overflow */
+}
+
+/* Plot text */
+.movie-info p {
+margin: 5px 0;
+font-size: 12px;  /* Smaller font size for plot */
+color: #555;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;  /* Prevent plot text overflow */
+}
+
+/* Trailer button */
+.trailer-button {
+margin-top: 8px;
+padding: 8px;
+font-size: 12px;  /* Smaller font size */
+background-color: #007BFF;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+text-align: center;
+display: block;
+width: 100%;
+}
+
+/* Trailer button hover effect */
+.trailer-button:hover {
+background-color: #0056b3;
+}
+
+/* Streaming platform links */
+.streaming-links {
+margin-top: 8px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.streaming-links a {
+font-size: 12px;  /* Smaller font size for links */
+color: #007BFF;
+text-decoration: none;
+margin-right: 10px;
+margin-bottom: 5px;
+display: inline-block;
+}
+
+.streaming-links a:hover {
+text-decoration: underline;
+}
+
+/* Fallback message */
+.streaming-links p {
+font-size: 12px;
+color: #e74c3c;
+margin: 5px 0;
+}
+
+
+
+
+
+/* Style for Filter Options */
+.filter-options {
+display: flex;
+justify-content: center;
+gap: 15px;
+margin-top: 10px;
+}
+
+.filter-options label {
+font-weight: bold;
+color: white;
+}
+
+.filter-options select,
+.filter-options input {
+padding: 8px;
+font-size: 16px;
+border: 2px solid #333;
+border-radius: 5px;
+background-color: rgba(255, 255, 255, 0.9); /* Light background */
+color: #333;
+}
+
+.filter-options select:focus,
+.filter-options input:focus {
+outline: none;
+border-color: red; /* Accent color for focus */
+box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Subtle red glow */
+}
